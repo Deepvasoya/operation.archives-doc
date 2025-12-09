@@ -58,6 +58,12 @@ Route::middleware(['auth'])->group(function () {
     // Usagers routes
     Route::resource('usagers', \App\Http\Controllers\UsagerController::class);
 
+    // Operations routes
+    Route::post('usagers/{usager}/operations', [\App\Http\Controllers\OperationController::class, 'store'])->name('operations.store');
+    Route::get('operations/{operation}/edit', [\App\Http\Controllers\OperationController::class, 'edit'])->name('operations.edit');
+    Route::put('operations/{operation}', [\App\Http\Controllers\OperationController::class, 'update'])->name('operations.update');
+    Route::delete('operations/{operation}', [\App\Http\Controllers\OperationController::class, 'destroy'])->name('operations.destroy');
+
     // Operation Types routes
     Route::resource('operation-types', \App\Http\Controllers\OperationTypeController::class);
 

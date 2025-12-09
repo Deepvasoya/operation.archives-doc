@@ -76,8 +76,9 @@ class UsagerController extends Controller
      */
     public function show(string $id)
     {
-        $usager = Usager::findOrFail($id);
-        return view('content.usagers.show', compact('usager'));
+        $usager         = Usager::with(['operations.operationType'])->findOrFail($id);
+        $operationTypes = \App\Models\OperationType::orderBy('nom')->get();
+        return view('content.usagers.show', compact('usager', 'operationTypes'));
     }
 
     /**

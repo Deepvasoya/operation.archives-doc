@@ -8,6 +8,10 @@ class Operation extends Model
     protected $fillable = [
         'usager_id',
         'operation_type_id',
+        'description',
+        'date',
+        'numero_operation',
+        'piece_jointe',
     ];
 
     public function usager()
