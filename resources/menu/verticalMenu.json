@@ -1,0 +1,34 @@
+{
+  "menu": [
+    {
+      "url": "/",
+      "name": "Tableau de Bord",
+      "icon": "menu-icon icon-base bx bx-home-smile",
+      "slug": "/"
+    },
+    {
+      "url": "usagers",
+      "name": "Usagers",
+      "icon": "menu-icon icon-base bx bx-user",
+      "slug": "usagers"
+    },
+    {
+      "url": "operation-types",
+      "name": "Types d'Opérations",
+      "icon": "menu-icon icon-base bx bx-list-ul",
+      "slug": "operation-types"
+    },
+    {
+      "url": "utilisateurs",
+      "name": "Gestion des Utilisateurs",
+      "icon": "menu-icon icon-base bx bx-user-circle",
+      "slug": "utilisateurs"
+    },
+    {
+      "url": "rapports",
+      "name": "Rapports",
+      "icon": "menu-icon icon-base bx bx-file-blank",
+      "slug": "rapports"
+    }
+  ]
+}
