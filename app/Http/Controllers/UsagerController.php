@@ -30,12 +30,18 @@ class UsagerController extends Controller
             $query->where('telephone', 'like', '%' . $request->filter_telephone . '%');
         }
 
+        // Add operations count
+        $query->withCount('operations');
+
         // Sorting
         $sortBy    = $request->get('sort_by', 'created_at');
         $sortOrder = $request->get('sort_order', 'desc');
 
-        if (in_array($sortBy, ['nom', 'cin', 'email', 'telephone', 'nombre_operations', 'created_at'])) {
+        if (in_array($sortBy, ['nom', 'cin', 'email', 'telephone', 'created_at'])) {
             $query->orderBy($sortBy, $sortOrder);
+        } elseif ($sortBy === 'nombre_operations') {
+            // Sort by operations count from relationship
+            $query->orderBy('operations_count', $sortOrder);
         } else {
             $query->orderBy('created_at', 'desc');
         }

@@ -53,7 +53,7 @@
               @enderror
             </div>
 
-            <div class="mb-6">
+            {{-- <div class="mb-6">
               <label class="form-label" for="nombre_operations">Nombre d'Opérations</label>
               <input type="number" class="form-control @error('nombre_operations') is-invalid @enderror"
                 id="nombre_operations" name="nombre_operations"
@@ -61,7 +61,7 @@
               @error('nombre_operations')
                 <div class="invalid-feedback">{{ $message }}</div>
               @enderror
-            </div>
+            </div> --}}
 
             <div class="d-flex justify-content-end gap-2">
               <a href="{{ route('usagers.index') }}" class="btn btn-secondary">Annuler</a>

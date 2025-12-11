@@ -62,7 +62,7 @@ class Analytics extends Controller
             DB::raw('DATE(created_at) as date'),
             DB::raw('COUNT(*) as count')
         )
-            ->groupBy('date')
+            ->groupBy(DB::raw('DATE(created_at)'))
             ->orderBy('date', 'asc')
             ->get()
             ->map(function ($item) {

@@ -17,7 +17,7 @@ class OperationController extends Controller
             'operation_type_id' => 'required|exists:operation_types,id',
             'description'       => 'nullable|string',
             'date'              => 'required|date',
-            'numero_operation'  => 'nullable|string|max:255',
+            'numero_operation'  => 'nullable|string|max:255|unique:operations,numero_operation',
             'piece_jointe'      => 'nullable|file|max:10240', // 10MB max
         ]);
 
@@ -62,7 +62,7 @@ class OperationController extends Controller
             'operation_type_id' => 'required|exists:operation_types,id',
             'description'       => 'nullable|string',
             'date'              => 'required|date',
-            'numero_operation'  => 'nullable|string|max:255',
+            'numero_operation'  => 'nullable|string|max:255|unique:operations,numero_operation,' . $id,
             'piece_jointe'      => 'nullable|file|max:10240', // 10MB max
         ]);
 

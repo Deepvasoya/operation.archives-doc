@@ -82,7 +82,7 @@
               <td class="cin">{{ $usager->cin }}</td>
               <td>{{ $usager->email ?? '-' }}</td>
               <td>{{ $usager->telephone ?? '-' }}</td>
-              <td>{{ $usager->nombre_operations }}</td>
+              <td>{{ $usager->operations_count }}</td>
               <td>
                 <a href="{{ route('usagers.edit', $usager->id) }}" class="btn btn-sm btn-info" title="Modifier">
                   <i class="icon-base bx bx-edit"></i>
