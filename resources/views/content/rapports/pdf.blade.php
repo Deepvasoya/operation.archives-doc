@@ -59,6 +59,17 @@
       top: 0;
       font-size: 9pt;
       text-align: right;
+      line-height: 1.8;
+    }
+
+    .middle-info {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .middle-info-content.right {
+      display: inline-block;
+      text-align: right;
     }
 
     .title {
@@ -107,12 +118,21 @@
       </div>
       <div class="company-name">StartusWeb</div>
       {{-- <div class="company-details">
-        Address: N°189 Lot Ikhtiar Hay Firdaous, Marrakesh 40080<br>
-        Téléphone: 0675-323012
+        Address: N°189 Lot Ikhtiar Hay Firdaous. Marrakesh 40000<br>
+        Téléphone. 0075-323012
       </div> --}}
     </div>
     <div class="date-info">
-      Généré le : {{ $date_generation }}
+      Généré le: {{ $date_generation }}<br>
+    </div>
+  </div>
+
+
+  <div class="middle-info">
+    <div class="middle-info-content right">
+      <span style="color: #28a745; font-weight: bold;">Nombre d'Opérations</span>
+      {{-- <span style="font-weight: bold;">{{ $operations->count() }}</span> --}}
+      <span style="font-weight: bold;">3</span>
     </div>
   </div>
 
@@ -124,6 +144,7 @@
     <thead>
       <tr>
         <th>N°</th>
+        {{-- <th>Numéro d'opération</th> --}}
         <th>Type d'opération</th>
         <th>Date</th>
         {{-- <th>Pièce jointe</th> --}}
@@ -133,6 +154,7 @@
       @forelse($operations as $index => $operation)
         <tr>
           <td class="text-center">{{ $index + 1 }}</td>
+          {{-- <td class="text-center">{{ $operation->numero_operation ?? '-' }}</td> --}}
           <td>{{ $operation->operationType->nom }}</td>
           <td>{{ $operation->created_at->format('d/m/Y') }}</td>
           {{-- <td class="text-center">{{ $operation->created_at->format('d/m/Y') == '30/04/2025' ? 'Oui' : 'Non' }}</td> --}}
