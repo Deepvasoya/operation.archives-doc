@@ -74,6 +74,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('rapports', [\App\Http\Controllers\RapportController::class, 'index'])->name('rapports.index');
     Route::get('rapports/pdf/{usager}', [\App\Http\Controllers\RapportController::class, 'generatePdf'])->name('rapports.pdf');
 
+    // Profile routes
+    Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'index'])->name('profile.index');
+    Route::post('profile/password', [\App\Http\Controllers\ProfileController::class, 'updatePassword'])->name('profile.update-password');
+
     // layout
     Route::get('/layouts/without-menu', [WithoutMenu::class, 'index'])->name('layouts-without-menu');
     Route::get('/layouts/without-navbar', [WithoutNavbar::class, 'index'])->name('layouts-without-navbar');

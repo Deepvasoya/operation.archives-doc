@@ -12,107 +12,117 @@
 
 @section('content')
   <!-- Header Stats -->
-  <div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <div class=" pb-8 pt-5 pt-md-8">
     <div class="container-fluid">
       <div class="header-body">
         <div class="row">
           <!-- Total des Usagers -->
-          <div class="col-xl-3 col-lg-6">
-            <div class="card card-stats mb-4 mb-xl-0">
+          <div class="col-xl-6 col-lg-6">
+            <div class="card card-stats mb-4 mb-xl-0 stats-card-hover">
               <div class="card-body">
-                <div class="row">
+                <div class="row align-items-center">
                   <div class="col">
-                    <h5 class="card-title text-uppercase text-muted mb-0">Total des Usagers</h5>
-                    <span class="h2 font-weight-bold mb-0">{{ $totalUsagers }}</span>
+                    <h6 class="card-title text-uppercase text-muted mb-2 stats-label">Total des Usagers</h6>
+                    <span class="stats-number">{{ $totalUsagers }}</span>
                   </div>
                   <div class="col-auto">
-                    <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                    <div class="icon icon-shape bg-danger text-white rounded-circle shadow stats-icon">
                       <i class="icon-base bx bx-user"></i>
                     </div>
                   </div>
                 </div>
-                <p class="mt-3 mb-0 text-muted text-sm">
-                  <span class="text-success mr-2">
-                    <i class="icon-base bx bx-up-arrow-alt"></i> +{{ $usagersGrowth }}%
-                  </span>
-                  <span class="text-nowrap">Ce mois-ci</span>
-                </p>
+                <div class="mt-3 pt-2 border-top border-light">
+                  <p class="mb-0 stats-growth">
+                    <span class="text-success font-weight-semibold">
+                      <i class="icon-base bx bx-up-arrow-alt"></i> +{{ $usagersGrowth }}%
+                    </span>
+                    <span class="text-muted ml-2 stats-period">Ce mois-ci</span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
           <!-- Total des Opérations -->
-          <div class="col-xl-3 col-lg-6">
-            <div class="card card-stats mb-4 mb-xl-0">
+          <div class="col-xl-6 col-lg-6">
+            <div class="card card-stats mb-4 mb-xl-0 stats-card-hover">
               <div class="card-body">
-                <div class="row">
+                <div class="row align-items-center">
                   <div class="col">
-                    <h5 class="card-title text-uppercase text-muted mb-0">Total des Opérations</h5>
-                    <span class="h2 font-weight-bold mb-0">{{ $totalOperations }}</span>
+                    <h6 class="card-title text-uppercase text-muted mb-2 stats-label">Total des Opérations</h6>
+                    <span class="stats-number">{{ $totalOperations }}</span>
                   </div>
                   <div class="col-auto">
-                    <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                    <div class="icon icon-shape bg-warning text-white rounded-circle shadow stats-icon">
                       <i class="icon-base bx bx-list-check"></i>
                     </div>
                   </div>
                 </div>
-                <p class="mt-3 mb-0 text-muted text-sm">
-                  <span class="text-success mr-2">
-                    <i class="icon-base bx bx-up-arrow-alt"></i> +{{ $operationsGrowth }}%
-                  </span>
-                  <span class="text-nowrap">Ce mois-ci</span>
-                </p>
+                <div class="mt-3 pt-2 border-top border-light">
+                  <p class="mb-0 stats-growth">
+                    <span class="text-success font-weight-semibold">
+                      <i class="icon-base bx bx-up-arrow-alt"></i> +{{ $operationsGrowth }}%
+                    </span>
+                    <span class="text-muted ml-2 stats-period">Ce mois-ci</span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
           <!-- Usager le plus Actif -->
-          <div class="col-xl-3 col-lg-6">
-            <div class="card card-stats mb-4 mb-xl-0">
+          <div class="col-xl-6 col-lg-6 mt-4">
+            <div class="card card-stats mb-4 mb-xl-0 stats-card-hover">
               <div class="card-body">
-                <div class="row">
+                <div class="row align-items-center">
                   <div class="col">
-                    <h5 class="card-title text-uppercase text-muted mb-0">Usager le plus Actif</h5>
-                    <span class="h2 font-weight-bold mb-0">{{ $mostActiveUsager ? $mostActiveUsager->nom : 'N/A' }}</span>
+                    <h6 class="card-title text-uppercase text-muted mb-2 stats-label">Usager le plus Actif</h6>
+                    <span
+                      class="stats-number stats-text-value">{{ $mostActiveUsager ? $mostActiveUsager->nom : 'N/A' }}</span>
                   </div>
                   <div class="col-auto">
-                    <div class="icon icon-shape bg-info text-white rounded-circle shadow">
+                    <div class="icon icon-shape bg-info text-white rounded-circle shadow stats-icon">
                       <i class="icon-base bx bx-user-circle"></i>
                     </div>
                   </div>
                 </div>
-                <p class="mt-3 mb-0 text-muted text-sm">
-                  <span class="text-success mr-2">
-                    <i class="icon-base bx bx-award"></i>
-                  </span>
-                  <span class="text-nowrap">Top Engagement</span>
-                </p>
+                <div class="mt-3 pt-2 border-top border-light">
+                  <p class="mb-0 stats-growth">
+                    <span class="text-info font-weight-semibold">
+                      <i class="icon-base bx bx-award"></i>
+                    </span>
+                    <span class="text-muted ml-2 stats-period">Top Engagement</span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
           <!-- Type d'Opération le plus Populaire -->
-          <div class="col-xl-3 col-lg-6">
-            <div class="card card-stats mb-4 mb-xl-0">
+          <div class="col-xl-6 col-lg-6 mt-4">
+            <div class="card card-stats mb-4 mb-xl-0 stats-card-hover">
               <div class="card-body">
-                <div class="row">
+                <div class="row align-items-center">
                   <div class="col">
-                    <h5 class="card-title text-uppercase text-muted mb-0">Type d'Opération le plus Populaire</h5>
-                    <span class="h2 font-weight-bold mb-0"
-                      style="font-size: 1rem;">{{ $mostPopularType ? $mostPopularType->nom : 'N/A' }}</span>
+                    <h6 class="card-title text-uppercase text-muted mb-2 stats-label">Type d'Opération le plus Populaire
+                    </h6>
+                    <span
+                      class="stats-number stats-text-value">{{ $mostPopularType ? $mostPopularType->nom : 'N/A' }}</span>
                   </div>
                   <div class="col-auto">
-                    <div class="icon icon-shape bg-success text-white rounded-circle shadow">
+                    <div class="icon icon-shape bg-success text-white rounded-circle shadow stats-icon">
                       <i class="icon-base bx bx-file-blank"></i>
                     </div>
                   </div>
                 </div>
-                <p class="mt-3 mb-0 text-muted text-sm">
-                  <span class="text-info mr-2">
-                    <i class="icon-base bx bx-star"></i>
-                  </span>
-                  <span class="text-nowrap">Plus Populaire</span>
-                </p>
+                <div class="mt-3 pt-2 border-top border-light">
+                  <p class="mb-0 stats-growth">
+                    <span class="text-info font-weight-semibold">
+                      <i class="icon-base bx bx-star"></i>
+                    </span>
+                    <span class="text-muted ml-2 stats-period">Plus Populaire</span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -295,20 +305,123 @@
 
     .card-stats {
       border: 0;
-      border-radius: 0.5rem;
+      border-radius: 0.75rem;
       box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+      background: #fff;
+    }
+
+    .stats-card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .stats-card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.2);
+    }
+
+    .stats-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.75rem !important;
+      color: #6c757d !important;
+    }
+
+    .stats-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #2b2c40;
+      display: block;
+      letter-spacing: -0.5px;
+    }
+
+    .stats-text-value {
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.4;
+      color: #2b2c40;
+      display: block;
+      word-break: break-word;
     }
 
     .icon-shape {
-      width: 3rem;
-      height: 3rem;
+      width: 4rem;
+      height: 4rem;
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: transform 0.3s ease;
+    }
+
+    .stats-card-hover:hover .icon-shape {
+      transform: scale(1.1);
     }
 
     .icon-shape i {
-      font-size: 1.5rem;
+      font-size: 2rem;
+    }
+
+    .stats-icon {
+      opacity: 0.95;
+    }
+
+    .stats-growth {
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .stats-growth i {
+      font-size: 1rem;
+      margin-right: 0.25rem;
+    }
+
+    .stats-period {
+      font-size: 0.8125rem;
+    }
+
+    .font-weight-semibold {
+      font-weight: 600;
+    }
+
+    .border-light {
+      border-color: #e9eaec !important;
+    }
+
+    @media (max-width: 1200px) {
+      .stats-number {
+        font-size: 2rem;
+      }
+
+      .stats-text-value {
+        font-size: 1.1rem;
+      }
+
+      .icon-shape {
+        width: 3.5rem;
+        height: 3.5rem;
+      }
+
+      .icon-shape i {
+        font-size: 1.75rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .stats-number {
+        font-size: 1.75rem;
+      }
+
+      .stats-text-value {
+        font-size: 1rem;
+      }
+
+      .stats-label {
+        font-size: 0.7rem;
+      }
     }
 
     .thead-light {

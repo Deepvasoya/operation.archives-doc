@@ -30,6 +30,18 @@
       top: 0;
     }
 
+    .company-logo {
+      margin-bottom: 10px;
+      max-height: 50px;
+      max-width: 150px;
+    }
+
+    .company-logo img {
+      height: auto;
+      max-height: 50px;
+      max-width: 150px;
+    }
+
     .company-name {
       font-size: 12pt;
       font-weight: bold;
@@ -90,11 +102,14 @@
 <body>
   <div class="header">
     <div class="company-info">
+      <div class="company-logo">
+        <img src="{{ public_path('assets/img/custom/logo.png') }}" alt="Logo">
+      </div>
       <div class="company-name">StartusWeb</div>
-      <div class="company-details">
+      {{-- <div class="company-details">
         Address: N°189 Lot Ikhtiar Hay Firdaous, Marrakesh 40080<br>
         Téléphone: 0675-323012
-      </div>
+      </div> --}}
     </div>
     <div class="date-info">
       Généré le : {{ $date_generation }}
@@ -111,7 +126,7 @@
         <th>N°</th>
         <th>Type d'opération</th>
         <th>Date</th>
-        <th>Pièce jointe</th>
+        {{-- <th>Pièce jointe</th> --}}
       </tr>
     </thead>
     <tbody>
@@ -120,7 +135,7 @@
           <td class="text-center">{{ $index + 1 }}</td>
           <td>{{ $operation->operationType->nom }}</td>
           <td>{{ $operation->created_at->format('d/m/Y') }}</td>
-          <td class="text-center">{{ $operation->created_at->format('d/m/Y') == '30/04/2025' ? 'Oui' : 'Non' }}</td>
+          {{-- <td class="text-center">{{ $operation->created_at->format('d/m/Y') == '30/04/2025' ? 'Oui' : 'Non' }}</td> --}}
         </tr>
       @empty
         <tr>
