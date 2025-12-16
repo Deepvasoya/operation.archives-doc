@@ -130,9 +130,9 @@
 
   <div class="middle-info">
     <div class="middle-info-content right">
-      <span style="color: #28a745; font-weight: bold;">Nombre d'Opérations</span>
+      <span style="color: #28a745; font-weight: bold;">Nombre d'Opérations : </span>
       {{-- <span style="font-weight: bold;">{{ $operations->count() }}</span> --}}
-      <span style="font-weight: bold;">3</span>
+      <span style="font-weight: bold;color: #000;">3</span>
     </div>
   </div>
 
